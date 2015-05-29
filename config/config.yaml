@@ -1,0 +1,53 @@
+# Mission Pinball Framework machine configuration file for William Star Trek: The
+# Next Generation
+
+# Instructions for this config file:
+# https://missionpinball.com/docs/configuration-file-reference/
+
+# Created by Brian Madden & Gabe Knuth
+
+OSC:
+    machine_ip: 127.0.0.1
+
+Scriptlets:
+    attract.Attract
+    game.Game
+
+Plugins:
+    - osc.OSC
+    - auditor.Auditor
+    - logic_blocks.LogicBlocks
+    - auditor.Auditor
+    - shots.ShotController
+    - scoring.ScoreController
+    - sound.SoundController
+#    - keyboard.Keyboard
+
+Config:
+    - hardware.yaml
+    - game_logic.yaml
+    - dmd.yaml
+    - assets.yaml
+#    - window.yaml
+
+Modes:
+    #- skillshot
+    - base
+    - kickback
+    - mission_control
+    - time_rift
+    - worm_hole
+    - search_the_galaxy
+    - battle_simulation
+    - qs_challenge
+    - rescue
+    - asteroid_threat
+    - final_frontier
+
+LightScripts:
+    flash:
+        - tocks: 1
+          color: ff
+        - tocks: 1
+          color: 0
+

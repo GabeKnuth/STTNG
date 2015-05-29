@@ -1,0 +1,41 @@
+Window:
+    width: 800
+    height: 731
+    title: "Star Trek: The Next Generation"
+    resizable: yes
+    frame: yes
+    fullscreen: no
+    fps: auto
+    quit_on_close: True
+    elements:
+
+      - type: VirtualDMD
+        width: 512
+        height: 128
+        h_pos: center
+        v_pos: bottom
+        y: -25
+        pixel_color: ff5500
+        dark_color: 220000
+        priority: 1
+        pixel_spacing: 1
+
+      - type: Image
+        image: backglass
+        x: 0
+        y: 0
+        priority: 0
+
+      - type: Shape
+        shape: box
+        width: 516
+        height: 132
+        priority: 1
+        thickness: 2
+        v_pos: bottom
+        y: -23
+        h_pos: center
+        color: aaaaaa
+
+Plugins:
+    - keyboard.Keyboard

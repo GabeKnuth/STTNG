@@ -1,0 +1,66 @@
+Game:
+    Balls per game: 5
+    Max players per game: 4
+    Restart on long press: True
+    Allow start with loose balls: False
+    player_controlled_eject_tag: launch
+
+Shots:
+    slingShot:
+        Switch: s_leftSling, s_rightSling
+    rightRamp:
+        Switch: s_madeRightRamp
+    rightOrbit:
+        Switch: s_rightOuterLoop
+    leftOrbit:
+        Switch: s_leftOuterLoop
+    leftRamp:
+        Switch: s_madeLeftRamp
+    middleRamp:
+        Switch: s_madeMiddleRamp
+    commandDecision:
+        Switch: s_underLeftHole
+    startMission:
+        Switch: s_underBorgHole
+    neutralZone:
+        Switch: s_left45degTarget, s_center45degTarget, s_right45degTarget
+    neutralZone_Hole:
+        Type: Sequence
+        Switches: s_center45degTarget, s_underLeftHole
+        Time: 1s
+    enterBorgLock:
+        Switch: s_borgEntry
+
+Scoring:
+    shot_slingShot:
+        Score: 1
+
+ShowPlayer:
+    machineflow_Attract_start:
+      - show: attract_display
+        repeat: yes
+        tocks_per_sec: 1
+
+    machineflow_Attract_stop:
+      - show: attract_display
+        action: stop
+
+TargetGroups:
+    upper_lanes:
+        targets: t_topLaneLeft, t_topLaneCenter, t_topLaneRight
+        rotate_left_events: sw_left_flipper
+        rotate_right_events: sw_right_flipper
+        reset_events: targets_upper_lanes_lit_complete
+        enable_events: ball_started
+        disable_events: ball_ending
+    left_bank:
+        targets: t_leftBankBottom, t_leftBankTop, t_leftBankMiddle
+        reset_events: targets_left_bank_lit_complete
+        enable_events: ball_started
+        disable_events: ball_ending
+    right_bank:
+        targets: t_rightBankBottom, t_rightBankTop, t_rightBankMiddle
+        reset_events: targets_right_bank_lit_complete
+        enable_events: ball_started
+        disable_events: ball_ending
+        

@@ -1,0 +1,7 @@
+Hardware:
+    Platform: p_roc
+
+Config:
+    - config.yaml
+    - sound.yaml
+#    - window.yaml
